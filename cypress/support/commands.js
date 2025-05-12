@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 const imgUrl = 'https://static.productionready.io/images/smiley-cyrus.jpg';
-
+console.log('file.inport')
 Cypress.Commands.add('login', (email, username, password) => {
   cy.request('POST', '/api/users', {
     user: {
@@ -66,5 +66,8 @@ Cypress.Commands.add('createArticle', (title, description, body) => {
         Authorization: `Token ${authToken}`
       }
     });
+    Cypress.Commands.add('TEST',() => {
+      console.log("test")
+    })
   });
 });
